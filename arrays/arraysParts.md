@@ -1,0 +1,1 @@
+# Zaawansowane techniki, jakie możemy wykonywać na tablicy
