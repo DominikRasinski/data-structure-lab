@@ -5,6 +5,8 @@
 * Output: Element not found
 */
 
+console.log('algorytm przeszukiwania binarnego')
+
 const firstNums: number[] = [2, 3, 0, 7, 9];
 const secondNums: number[] = [1, 4, 5, 8, 9];
 
@@ -13,7 +15,7 @@ function binarySearch(target: number, array: number[]): number {
     let end: number = array.length - 1;
     while (start <= end)
     {
-        let mid: number = Math.ceil((start + end) / 2);
+        let mid: number = Math.floor((start + end) / 2);
         if(target == array[mid]) {
             return mid;
         }

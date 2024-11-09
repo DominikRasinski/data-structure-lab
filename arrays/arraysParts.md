@@ -38,3 +38,4 @@ A[j] = temp
 ```
 **Zmienna tymczasowa przyjmuje zazwyczaj nazwę `temp`**
 
+## Algorytmy wyszukiwania są dobrym sposobem na pokazanie działania tablicy
