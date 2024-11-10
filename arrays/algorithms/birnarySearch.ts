@@ -7,7 +7,7 @@
 
 console.log('algorytm przeszukiwania binarnego')
 
-const firstNums: number[] = [2, 3, 0, 7, 9];
+const firstNums: number[] = [0, 2, 3, 7, 9];
 const secondNums: number[] = [1, 4, 5, 8, 9];
 
 function binarySearch(target: number, array: number[]): number {
