@@ -13,3 +13,11 @@ Wskaźniki to zmienne przechowujące tylko adresy pamięci komputera. Najważnie
 Unikalność mechanizmu wskaźników które zwracają referencję do adresu pamięci, potrafi uprościć skomplikowane stryktury poprzez to, że nie ma potrzeby tworzenia zmiennych nawiązujących do kolejnych danych i marnowanie pamięci, kiedy możemy stworzyć jeden wskaźnik do głównej zmiennej i referować do niej w dalszej części kodu.
 
 W języku TypeScript nie posiadamy wskaźników takich jak w języku C, C++. W języku TypeScript jak i w JS posiadamy jedynie referencję
+
+Wykorzystanie mechanizmu referencji w języki JS/TS jest dosyć uproszczone ze względu na to, że tworząc obiekt tworzymy od razu referencję do pod postacią zwykłej zmiennej. Również podczas wykorzystania słowa kluczowego `this` wewnątrz obiektu mamy możliwość odwoływania się bezpośrednio do jego metod.
+
+Tworzenie nowej instancji klasy `LinkedList`, zmienna `list` jest teraz referencją do klasy `LinkedList`
+
+```ts
+const list = new LinkedList();
+```

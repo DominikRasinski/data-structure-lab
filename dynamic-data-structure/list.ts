@@ -42,6 +42,33 @@ class LinkedList {
       current = current.next;
     }
   }
+
+  howManyNodes(): number {
+    let count = 0;
+    while (this.head !== null) {
+      count++;
+      this.head = this.head.next;
+    }
+    return count;
+  }
+
+  deleteNode(node: number): void {
+    let current = this.head;
+    let prev: ListNode | null = null;
+
+    while (current !== null) {
+      if (current.node === node) {
+        if (prev === null) {
+          this.head = current.next;
+        } else {
+          prev.next = current.next;
+        }
+        return;
+      }
+      prev = current;
+      current = current.next;
+    }
+  }
 }
 
 const list = new LinkedList();
@@ -50,3 +77,4 @@ list.append(2);
 list.append(3);
 list.prepend(0);
 list.printList();
+console.log(list.howManyNodes()); // 4
