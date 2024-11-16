@@ -21,3 +21,52 @@ Tworzenie nowej instancji klasy `LinkedList`, zmienna `list` jest teraz referenc
 ```ts
 const list = new LinkedList();
 ```
+
+## Listy
+
+Listy ze względu na to, że pozycja elementu jest względna wobec wartości jakie są w liscie przetrzymywane są dynamiczną strukturą danych, to jest największa zaleta List nad Tablicami.
+
+Tablice przez to, że mają bezwzględną pozycję elementów, czyli każdy element ma swój indeks, który jest nie zmienny do czasu gdy nie zmienimy całej struktury tablicy, listy za to są względne wobec wartości, czyli pierwsza wartość wie, że stoi przed wartością drugą ale jak będziemy chcieli usunąć wartość drugą to nie musimy przesuwać wszystkich elementów za pierwszą wartością, jedynie wystarczy, że zmienimy wskaźnik w pierwszej wartości z drugiej na trzecią, i ta o to usunęliśmy wartość drugą z listy edytując tylko jeden element.
+
+### Zużycie zasobów
+
+Ze względu, że listy są podobną strukturą danych do tablic, ale muszą uzyskać o jeden element więcej czyli wskaźnik wskazujący na kolejny element, zużycie pamięci przedstawiamy następująco:
+
+Mając tablice o rozmiarze K z wartościami N-bajtowymi, potrzebujemy K _ N bajtów pamięci. Natomiast jeżeli każdy wskaźnik wymaga kolejnych M bajtów, struktura listy potrzebuje K _ (M + N) bajtów wolnej pamięci.
+
+## Tworzenie listy
+
+Podczas tworzenia listy potrzebujemy na samym początku zdefiniować węzeł. Wezły w liście są odpowiedzialne za przetrzymywanie danych oraz wskaźników do kolejnych węzłów w liście, można rzecz że są podstawowym budulcem dynamicznych struktur danych.
+
+> Trzeba zaznaczyć, że przykład listy w kodzie TypeScript może się dosyć różnić od przykładów w kodzie takim jak C++, ze względu na wykorzystanie wskaźników które dają surowy dostęp do pamięci wskazanej wartości. TypeScript jak i JavaScript wykorzystuję tylko mechanizm referencji.
+
+#### Węzeł Listy
+
+Przykład węzła w kodzie TypeScript:
+Węzeł możemy rozszerzyć o właściwość `value` w której będziemy trzymać wartości i nie muszą być to wartości typu `number`
+
+```ts
+class ListNode {
+  node: number;
+  next: ListNode | null;
+
+  constructor(node: number) {
+    this.node = node;
+    this.next = null;
+  }
+}
+```
+
+#### Lista połączona
+
+Klasa `LinkedList` jest tak naprawdę wzorem na podstawie którego budujemy liste. Tą klasę będziemy rozwijać pod kątem metod oraz operacji jakie będziemy chcieli wykonywać na liście.
+
+```ts
+class LinkedList {
+  head: ListNode | null;
+
+  constructor() {
+    this.head = null;
+  }
+}
+```
