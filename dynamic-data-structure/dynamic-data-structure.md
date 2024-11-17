@@ -70,3 +70,31 @@ class LinkedList {
   }
 }
 ```
+
+Metoda pozwalająca na dodanie elementu na końcu listy
+
+```ts
+append(node: number): void {
+  const newNode = new ListNode(node);
+  if (this.head === null) {
+    this.head = newNode;
+    return;
+  }
+
+  let current = this.head;
+  while (current.next !== null) {
+    current = current.next;
+  }
+  current.next = newNode;
+}
+```
+
+Metoda pozwalająca na dodanie elementu na samym początku listy
+
+```ts
+prepend(node: number): void {
+  const newNode = new ListNode(node);
+  newNode.next = this.head;
+  this.head = newNode;
+}
+```

@@ -37,10 +37,15 @@ class LinkedList {
 
   printList(): void {
     let current = this.head;
+    if (current === null) {
+      console.log('Lista jest pusta');
+      return;
+    }
     while (current !== null) {
       console.log(current.node);
       current = current.next;
     }
+    return;
   }
 
   howManyNodes(): number {
@@ -51,11 +56,12 @@ class LinkedList {
     }
     return count;
   }
-
+  // Metoda nie dziala
   deleteNode(node: number): void {
     let current = this.head;
     let prev: ListNode | null = null;
 
+    console.log([prev, current]);
     while (current !== null) {
       if (current.node === node) {
         if (prev === null) {
@@ -63,11 +69,11 @@ class LinkedList {
         } else {
           prev.next = current.next;
         }
-        return;
       }
       prev = current;
       current = current.next;
     }
+    return;
   }
 }
 
@@ -78,3 +84,7 @@ list.append(3);
 list.prepend(0);
 list.printList();
 console.log(list.howManyNodes()); // 4
+console.log('Usuwam element 2');
+list.deleteNode(2);
+console.log(list.howManyNodes()); // 3
+list.printList();
